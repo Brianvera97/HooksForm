@@ -1,0 +1,46 @@
+
+
+.input {
+    background-color: #f6f6f6;
+    width: 360px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.input>label{
+    color: #a7a7a7;
+}
+.input>input{
+    border-radius: 4px;
+
+}
+.inputStyles{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.submit{
+    background-color: #a7a7a7;
+    width: 140px;
+    margin-left: 80px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 4px 4px 6px 1px rgba(0,0,0,0.99);
+    margin-top: 20px;
+
+}
+.submit:hover{
+    transform: scale(1.1);
+}
+
+.request{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 30px;
+    row-gap: 20px;
+
+}
