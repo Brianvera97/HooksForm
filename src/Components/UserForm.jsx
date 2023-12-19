@@ -35,6 +35,7 @@ const UserForm = (props) => {
             setLastNameError('');
         }
     }
+
     const handleEmail= (e) => {
         setEmail(e.target.value);
         if (e.target.value.length < 1) {
@@ -45,6 +46,7 @@ const UserForm = (props) => {
             setEmailError('');
         }
     }
+    
     const handlePassword = (e) => {
         setPassword(e.target.value);
         if (e.target.value.length < 1) {
@@ -65,6 +67,13 @@ const UserForm = (props) => {
         }
 
         setError("")
+        setFirstName("")
+        setLastName("")
+        setEmail("")
+        setPassword("")
+        setConfirmPassword("")
+        
+        
 
         const newUser = { firstname, lastname, email, password, confirmpassword }
         console.log("welcome", newUser)
@@ -87,7 +96,7 @@ const UserForm = (props) => {
                 <h3>{formMessage()}</h3>
                 <div className={styles.input}>
                     <label>First Name: </label>
-                    <input type="text" onChange={handleName} />
+                    <input type="text" onChange={handleName} value={firstname}/>
                     {
                     nameError ?
                     <p style={{color:'red'}}>{ nameError }</p> 
@@ -96,7 +105,7 @@ const UserForm = (props) => {
                 </div>
                 <div className={styles.input}>
                     <label>Last Name: </label>
-                    <input type="text" onChange={handleLastName} />
+                    <input type="text" onChange={handleLastName} value={lastname}/>
                     {
                     lastNameError ?
                     <p style={{color:'red'}}>{ lastNameError }</p> 
@@ -105,7 +114,7 @@ const UserForm = (props) => {
                 </div>
                 <div className={styles.input}>
                     <label>Email Address: </label>
-                    <input type="email" onChange={handleEmail} />
+                    <input type="email" onChange={handleEmail} value={email} />
                     {
                     emailError ?
                     <p style={{color:'red'}}>{ emailError }</p> 
@@ -114,7 +123,7 @@ const UserForm = (props) => {
                 </div>
                 <div className={styles.input}>
                     <label>Password: </label>
-                    <input type="password" onChange={handlePassword} />
+                    <input type="password" onChange={handlePassword} value={password} />
                     {
                     passwordError ?
                     <p style={{color:'red'}}>{ passwordError }</p> 
@@ -123,7 +132,7 @@ const UserForm = (props) => {
                 </div>
                 <div className={styles.input}>
                     <label>Confirm Password: </label>
-                    <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} />
+                    <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmpassword} />
                 </div>
                 <input className={styles.submit} type="submit" value="Create User" />
             </form>
