@@ -24,7 +24,7 @@ const UserForm = (props) => {
             setNameError('');
         }
     }
-    
+
     const handleLastName = (e) => {
         setLastName(e.target.value);
         if (e.target.value.length < 1) {
@@ -36,7 +36,7 @@ const UserForm = (props) => {
         }
     }
 
-    const handleEmail= (e) => {
+    const handleEmail = (e) => {
         setEmail(e.target.value);
         if (e.target.value.length < 1) {
             setEmailError("");
@@ -46,7 +46,7 @@ const UserForm = (props) => {
             setEmailError('');
         }
     }
-    
+
     const handlePassword = (e) => {
         setPassword(e.target.value);
         if (e.target.value.length < 1) {
@@ -72,8 +72,8 @@ const UserForm = (props) => {
         setEmail("")
         setPassword("")
         setConfirmPassword("")
-        
-        
+
+
 
         const newUser = { firstname, lastname, email, password, confirmpassword }
         console.log("welcome", newUser)
@@ -94,47 +94,72 @@ const UserForm = (props) => {
             <form onSubmit={createUser} className={styles.inputStyles}>
                 {error && <div style={{ color: "red" }}>{error}</div>}
                 <h3>{formMessage()}</h3>
+
                 <div className={styles.input}>
                     <label>First Name: </label>
-                    <input type="text" onChange={handleName} value={firstname}/>
-                    {
-                    nameError ?
-                    <p style={{color:'red'}}>{ nameError }</p> 
-                    : ''
-                }
+                    <input
+                        type="text"
+                        onChange={handleName}
+                        value={firstname}
+                    />
                 </div>
+                {
+                    nameError ?
+                        <p style={{ color: 'red' }}>{nameError}</p>
+                        : ''
+                }
                 <div className={styles.input}>
                     <label>Last Name: </label>
-                    <input type="text" onChange={handleLastName} value={lastname}/>
-                    {
-                    lastNameError ?
-                    <p style={{color:'red'}}>{ lastNameError }</p> 
-                    : ''
-                }
+                    <input
+                        type="text"
+                        onChange={handleLastName}
+                        value={lastname}
+                    />
                 </div>
+                {
+                    lastNameError ?
+                        <p style={{ color: 'red' }}>{lastNameError}</p>
+                        : ''
+                }
                 <div className={styles.input}>
                     <label>Email Address: </label>
-                    <input type="email" onChange={handleEmail} value={email} />
-                    {
-                    emailError ?
-                    <p style={{color:'red'}}>{ emailError }</p> 
-                    : ''
-                }
+                    <input
+                        type="email"
+                        onChange={handleEmail}
+                        value={email}
+                    />
                 </div>
+                {
+                    emailError ?
+                        <p style={{ color: 'red' }}>{emailError}</p>
+                        : ''
+                }
                 <div className={styles.input}>
                     <label>Password: </label>
-                    <input type="password" onChange={handlePassword} value={password} />
-                    {
-                    passwordError ?
-                    <p style={{color:'red'}}>{ passwordError }</p> 
-                    : ''
-                }
+                    <input
+                        type="password"
+                        onChange={handlePassword}
+                        value={password}
+                    />
                 </div>
+                {
+                    passwordError ?
+                        <p style={{ color: 'red' }}>{passwordError}</p>
+                        : ''
+                }
                 <div className={styles.input}>
                     <label>Confirm Password: </label>
-                    <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmpassword} />
+                    <input
+                        type="password"
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        value={confirmpassword}
+                    />
                 </div>
-                <input className={styles.submit} type="submit" value="Create User" />
+                <input
+                    className={styles.submit}
+                    type="submit"
+                    value="Create User"
+                />
             </form>
             <div className={styles.request}>
                 <h2>Your Form Data</h2>
